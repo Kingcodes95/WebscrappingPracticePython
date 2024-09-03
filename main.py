@@ -6,6 +6,10 @@ url = "https://www.fantasypros.com/nfl/rankings/half-point-ppr-cheatsheets.php"
 page = requests.get(url).text
 doc = BeautifulSoup(page, "html.parser")
 
-page_text = doc.findAll('tooltip-left ecr-vs-adp-wrap')
+elements = doc.find('div', class_ = "tooltip-left ecr-vs-adp-wrap")
 
-print(page_text)
+page_text = elements
+
+print(doc.prettify())
+
+# Trying to learn more about WebScrapping, so im going to scrap for a lil and watch videos about it
